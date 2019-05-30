@@ -1,0 +1,33 @@
+debug = true
+
+logLevel = "INFO"
+
+defaultEntryPoints = ["http"]
+
+[entryPoints]
+  [entryPoints.http]
+    address = ":80"
+  [entryPoints.api]
+    address = ":8081"
+
+[file]
+  watch = true
+
+[api]
+ entryPoint = "api"
+ dashboard = true
+
+[accessLog]
+
+[frontends]
+  [frontends.default]
+    backend = "default"
+    [frontends.default.routes]
+      [frontends.default.routes.route0]
+        rule = "Path: /"
+
+[backends]
+  [backends.default]
+    [backends.default.servers]
+      [backends.default.servers.default]
+        url = "http://127.0.0.1:38080"
