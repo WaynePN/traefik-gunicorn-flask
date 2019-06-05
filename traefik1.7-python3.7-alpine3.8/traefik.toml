@@ -24,7 +24,7 @@ defaultEntryPoints = ["http"]
     backend = "default"
     [frontends.default.routes]
       [frontends.default.routes.route0]
-        rule = "Path: /"
+        rule = "PathPrefix: /"
 
 [backends]
   [backends.default]
